@@ -14,7 +14,6 @@ const ProductItem: React.FC <ProductItemProps>= ({ _productProp })=>{
             <strong> Name:{_productProp.name}</strong>
         </div>
             <div>
-                
                 <strong>Price:{_productProp.price}</strong>
                 <button>Add to Cart</button>
             </div>
