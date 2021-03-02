@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ProductsOverview from './productsOverviewComp/productsOverview';
+import ProductsOverview from './components/productsOverviewComp/productsOverview';
 import { Product } from "./models/product"
 
 

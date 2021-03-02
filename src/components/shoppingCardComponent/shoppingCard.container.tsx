@@ -1,6 +1,6 @@
 import React from "react"
 import styles from "./shoppingCard.module.css"
-import { Product } from "../models/product"
+import { Product } from "../../models/product"
 
 
 interface ShoppingCardProps {
