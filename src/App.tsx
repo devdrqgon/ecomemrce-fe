@@ -1,17 +1,22 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ShoppingCard from './shoppingCardComponent/shoppingCard.container';
+import ProductsOverview from './productsOverviewComp/productsOverview';
 import { Product } from "./models/product"
 
-function App() {
+
+const App: React.FC = () => {
+
 const Omo=new Product("1","Omo Matic",5)
 const Dixan=new Product("15","Dixan",24)
 const ProductsList:Product[]= [Omo, Dixan]
-  return (
+
+return (
     <div className="App">
-      <ShoppingCard ProductsListProp={ProductsList}/>
+      <ProductsOverview _productsOverviewProp={ProductsList}/>                
     </div>
+
+
   );
 }
 

@@ -20,11 +20,9 @@ const ShoppingCard: React.FC<ShoppingCardProps> = ({ ProductsListProp }) => {
                         Price:  {p.price}
                     </div>
                 </div>
-            )
-            }
+            )}
         </div>
     )
-
 }
 
 export default ShoppingCard

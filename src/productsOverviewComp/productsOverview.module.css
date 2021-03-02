@@ -1,0 +1,19 @@
+.ProductsOverviewContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid black;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    
+   
+}
+
+.ProductItemContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 50px;
+    border: solid  yellow 1px;
+
+}
