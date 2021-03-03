@@ -1,14 +1,26 @@
 .ProductsOverviewContainer{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     border: 1px solid black;
     padding-bottom: 25px;
-    padding-top: 25px;
-    
-   
+    padding-bottom: 60px;
+   width: 1200px;
+   height: 600px;
 }
 
+.CategoryFiltersContainer{
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid purple;
+}
+
+.filterStyle{
+    margin-right: 30px;
+    border: 1px solid green;
+    border-radius: 250px;
+}
 .ProductItemContainer{
     display: flex;
     flex-direction: row;
