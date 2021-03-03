@@ -10,7 +10,9 @@ interface ShoppingCardProps {
 const ShoppingCard: React.FC<ShoppingCardProps> = ({ ProductsListProp }) => {
     return (
         <div>
-            <h1> I am the Shopping Card</h1>
+            <div style={{ marginLeft: '100px', borderBottom: 'solid 1px black' }}>
+                <h4> Shopping Card</h4>
+            </div>
             {ProductsListProp.map(p =>
                 <div className={styles.shoppingCardContianer}>
                     <div style={{ marginRight: '50px' }}>
