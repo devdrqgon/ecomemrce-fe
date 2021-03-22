@@ -28,7 +28,7 @@ const SinglePage: React.FC = () => {
                 <ProductsOverview _productsProp={ProductsList} />
             </div>
             <div>
-                <ShoppingCard ProductsListProp={shoppingCardItems} />
+                <ShoppingCard  />
             </div>
         </div>
 

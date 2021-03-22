@@ -1,6 +1,18 @@
-.shoppingCardContianer{
+.shoppingCardPageContainer{
+    background-color: rgb(204, 203, 203);
     display: flex;
-    justify-content: center;
-    border: 1px solid black;
+   border: black 1px solid;
+   min-height: 100vh;
    
+}
+
+.productsListContainer{
+    width: 70%;
+    background-color: white;
+}
+
+.checkoutContainer{
+    margin-left: 25px;
+    width: 30%;
+    background-color: white;
 }
