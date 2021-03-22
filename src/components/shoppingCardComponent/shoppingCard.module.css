@@ -7,12 +7,30 @@
 }
 
 .productsListContainer{
+    border: 1px solid white;
+    border-radius: 15px;
+    margin: 10px;
     width: 70%;
     background-color: white;
 }
 
 .checkoutContainer{
-    margin-left: 25px;
+    margin: 10px 10px 10px 0px;
     width: 30%;
     background-color: white;
+    border: 1px solid white;
+    border-radius: 15px;
+}
+
+.titleContainer{
+    margin-left: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: stretch;
+    font-size: larger;
+    font-weight: 600;
 }
