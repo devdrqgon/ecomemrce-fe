@@ -11,13 +11,35 @@ const ShoppingCardPage: React.FC<ShoppingCardProps> = ({}) => {
     const prodOne = new Product("sadoiuad","bnlabl",23,"sadad")
     const prodTwo = new Product("sadoiuasd2ad","ztz",23,"sadad")
     const prodThree = new Product("sadoiuaasdd","bnladabl",23,"sadad")
-    const prodFour = new Product("sadoiua213sd2ad","2387ze",23,"sadad")
-    const prodList = [prodOne,prodTwo, prodThree, prodFour]
+    const prodList = [prodOne,prodTwo, prodThree]
     return (
         <div className={styles.shoppingCardPageContainer}>
-            <div className={styles.productsListContainer}>
-                <div className={styles.titleContainer}>
-                    shopping Card
+            <div className={styles.shoppingCardContainer}>
+                <div className={styles.headerContainer}>
+                    <div className={styles.titleStyle}>
+                        shopping Card
+                    </div>
+                    <div className={styles.priceStyle}>
+                        price
+                    </div>
+                </div>
+                <div className={styles.shoppingCardItemsContainer}>
+                    {
+                        prodList.map(p => 
+                            <div className={styles.itemContainer}>
+                                <div className={styles.imgStyle}>
+
+                                </div>
+                                <div className={styles.detailsStyle}>
+                                    name : {p.name}
+                                </div>
+                                <div className={styles.itemPriceStyle}>
+                                    price: {p.price}
+                                </div>
+                            </div>
+                            
+                        )
+                    }
                 </div>
             </div>
             <div className={styles.checkoutContainer}>

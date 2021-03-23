@@ -6,7 +6,7 @@
    
 }
 
-.productsListContainer{
+.shoppingCardContainer{
     border: 1px solid white;
     border-radius: 15px;
     margin: 10px;
@@ -22,15 +22,52 @@
     border-radius: 15px;
 }
 
-.titleContainer{
+.headerContainer{
     margin-left: 20px;
     margin-top: 20px;
+    margin-bottom: 50px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: space-between;
     align-content: stretch;
+   
+}
+
+.titleStyle{
     font-size: larger;
     font-weight: 600;
+}
+
+.priceStyle{
+    margin-top: 20px;
+}
+
+.shoppingCardItemsContainer{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
+}
+
+.itemContainer{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.detailsStyle{
+   
+    width: 80%;
+    background-color: chartreuse;
+}
+
+.imgStyle{
+    height: 200px;
+    width: 200px;
+    background-color: green;
+}
+
+.itemPriceStyle{
+    background-color: chocolate;
 }
