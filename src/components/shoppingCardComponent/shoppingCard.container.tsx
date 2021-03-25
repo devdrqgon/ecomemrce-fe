@@ -3,22 +3,22 @@ import { Product } from "../../models/product"
 import styles from "./shoppingCard.module.css"
 
 interface ShoppingCardPageProps{
-    prodList: Product[]
+    prodListProp: Product[]
 }
 
 
-const ShoppingCardPage: React.FC<ShoppingCardPageProps>= ({prodList}) => {
+const ShoppingCardPage: React.FC<ShoppingCardPageProps>= ({prodListProp}) => {
     //Daten Vearbeitung Teil
    
     function calculateSum(_inputList: Product[]){
         let sum = 0
-        prodList.forEach(p => {
+        prodListProp.forEach(p => {
             sum = sum + p.price
         });
         return sum
     }
-    let itemsCount = prodList.length
-    let totalprice = calculateSum(prodList)
+    let itemsCount = prodListProp.length
+    let totalprice = calculateSum(prodListProp)
 
     //output
     return (
@@ -34,7 +34,7 @@ const ShoppingCardPage: React.FC<ShoppingCardPageProps>= ({prodList}) => {
                 </div>
                 <div className={styles.shoppingCardItemsContainer}>
                     {
-                        prodList.map(p => 
+                        prodListProp.map(p => 
                             <div className={styles.itemContainer}>
                                 <div className={styles.imgStyle}>
 
@@ -67,7 +67,3 @@ const ShoppingCardPage: React.FC<ShoppingCardPageProps>= ({prodList}) => {
 export default ShoppingCardPage
 
 
-// const prodOne = new Product("sadoiuad","bnlabl",23,"sadad")
-//     const prodTwo = new Product("sadoiuasd2ad","ztz",54,"sadad")
-//     const prodThree = new Product("sadoiuaasdd","bnladabl",230,"sadad")
-//     const prodList = [prodOne,prodTwo, prodThree]
