@@ -1,5 +1,6 @@
 import React from "react"
 import { Product } from "../../models/product"
+import ProductItem from "../common/productItem/productItem"
 import styles from "./shoppingCard.module.css"
 
 interface ShoppingCardPageProps{
@@ -35,17 +36,7 @@ const ShoppingCardPage: React.FC<ShoppingCardPageProps>= ({prodListProp}) => {
                 <div className={styles.shoppingCardItemsContainer}>
                     {
                         prodListProp.map(p => 
-                            <div className={styles.itemContainer}>
-                                <div className={styles.imgStyle}>
-
-                                </div>
-                                <div className={styles.detailsStyle}>
-                                    name : {p.name}
-                                </div>
-                                <div className={styles.itemPriceStyle}>
-                                    price: {p.price}
-                                </div>
-                            </div>
+                            <ProductItem nameProduct={p.name} priceProduct={p.price}  />   
                         )
                     }
                 </div>

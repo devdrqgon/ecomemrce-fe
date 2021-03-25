@@ -52,24 +52,5 @@
 	align-content: stretch;
 }
 
-.itemContainer{
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 20px;
-}
 
-.detailsStyle{
-   
-    width: 80%;
-    background-color: chartreuse;
-}
 
-.imgStyle{
-    height: 200px;
-    width: 200px;
-    background-color: green;
-}
-
-.itemPriceStyle{
-    background-color: chocolate;
-}
