@@ -46,7 +46,6 @@ const ShoppingCardPage: React.FC<ShoppingCardPageProps>= ({prodListProp}) => {
                                     price: {p.price}
                                 </div>
                             </div>
-                            
                         )
                     }
                 </div>
