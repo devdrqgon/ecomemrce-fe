@@ -6,12 +6,16 @@ import ProductItem from '../common/productItem/productItem'
 interface ProductsPageProps {
     productsListProp: Product[]
 }
-const ProductsPage: React.FC<ProductsPageProps> = ({productsListProp}) => {
+const ProductsPage: React.FC= () => {
+    const prodOne = new Product("sadoiuad","bnlabl",23,"sadad")
+     const prodTwo = new Product("sadoiuasd2ad","ztz",54,"sadad")
+     const prodThree = new Product("sadoiuaasdd","bnladabl",230,"sadad")
+     const prodList = [prodOne,prodTwo, prodThree]
     return(
         <div className={styles.ProductsListContainer}>
                 
             {
-                productsListProp.map(p=>
+                prodList.map(p=>
                 <ProductItem nameProduct={p.name} priceProduct={p.price}/>
                     
                 )

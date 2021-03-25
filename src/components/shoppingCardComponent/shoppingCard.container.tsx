@@ -8,18 +8,21 @@ interface ShoppingCardPageProps{
 }
 
 
-const ShoppingCardPage: React.FC<ShoppingCardPageProps>= ({prodListProp}) => {
+const ShoppingCardPage: React.FC= () => {
     //Daten Vearbeitung Teil
-   
+    const prodOne = new Product("sadoiuad","bnlabl",23,"sadad")
+    const prodTwo = new Product("sadoiuasd2ad","ztz",54,"sadad")
+    const prodThree = new Product("sadoiuaasdd","bnladabl",230,"sadad")
+    const prodList = [prodOne,prodTwo, prodThree]
     function calculateSum(_inputList: Product[]){
         let sum = 0
-        prodListProp.forEach(p => {
+        prodList.forEach(p => {
             sum = sum + p.price
         });
         return sum
     }
-    let itemsCount = prodListProp.length
-    let totalprice = calculateSum(prodListProp)
+    let itemsCount = prodList.length
+    let totalprice = calculateSum(prodList)
 
     //output
     return (
@@ -35,7 +38,7 @@ const ShoppingCardPage: React.FC<ShoppingCardPageProps>= ({prodListProp}) => {
                 </div>
                 <div className={styles.shoppingCardItemsContainer}>
                     {
-                        prodListProp.map(p => 
+                        prodList.map(p => 
                             <ProductItem nameProduct={p.name} priceProduct={p.price}  />   
                         )
                     }
