@@ -2,6 +2,7 @@ import { Layout, Menu } from 'antd';
 import styles from "./masterLayout.module.css"
 import React from 'react'
 import { Product } from '../../models/product';
+import ProductsPage from '../productsPage/productsPage';
 const { Header, Content } = Layout;
 
 
@@ -22,7 +23,7 @@ return(
     </Header>
     <Content style={{ padding: '0 50px' }}>    
       <div className={styles.siteLayoutContent}>
-                    <h1>this is products List page </h1>
+           <ProductsPage productsListProp={prodList}/>
       </div>
     </Content>
     
