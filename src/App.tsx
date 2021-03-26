@@ -6,11 +6,10 @@ const App: React.FC = () => {
 
 return (
     <div className="App">
-        <MasterLayout/> 
+       <MasterLayout/>
     </div>
-
-
   );
 }
 
-export default App;
+export default App
+
