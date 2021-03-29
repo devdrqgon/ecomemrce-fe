@@ -17,7 +17,7 @@ return(
    <Router>
       <Layout className="layout">
         <Header>
-          <div className="logo" />
+         
           <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
             <Menu.Item key="2">
               Products
@@ -32,7 +32,8 @@ return(
         </Header>
         <Content style={{ padding: '0 50px' }}>    
           <div className={styles.siteLayoutContent}>
-            <Route exact path="/products" component={ProductsPage} />
+          <Route path="/" component={ProductsPage} />
+            <Route path="/products" component={ProductsPage} />
             <Route path="/shoppingcart" component={ShoppingCardPage} />       
           </div>
         </Content>
