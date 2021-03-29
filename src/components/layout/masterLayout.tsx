@@ -32,9 +32,9 @@ return(
         </Header>
         <Content style={{ padding: '0 50px' }}>    
           <div className={styles.siteLayoutContent}>
-          <Route path="/" component={ProductsPage} />
-            <Route path="/products" component={ProductsPage} />
-            <Route path="/shoppingcart" component={ShoppingCardPage} />       
+            <Route  exact path="/" component={ProductsPage} />
+            <Route exact path="/products" component={ProductsPage} />
+            <Route  exact path="/shoppingcart" component={ShoppingCardPage} />       
           </div>
         </Content>
   </Layout>
