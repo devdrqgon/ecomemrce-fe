@@ -1,5 +1,5 @@
-import { Product } from "../../models/product";
 import { ActionType } from 'typesafe-actions';
+import { Product } from '../models/product';
 import * as actions from './actions';
 
 export type DemoActions = ActionType<typeof actions>;

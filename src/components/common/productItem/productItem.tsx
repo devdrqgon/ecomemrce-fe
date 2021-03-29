@@ -1,6 +1,6 @@
 import React from "react"
 import { Dispatch } from "redux"
-import { DemoActions } from "../../../store/demo/types"
+import { DemoActions } from "../../../store/types"
 import styles from "./productItem.module.css"
 import * as actions from '../../../store/actions';
 import { Product } from "../../../models/product";

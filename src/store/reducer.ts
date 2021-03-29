@@ -1,4 +1,4 @@
-import { Product } from '../../models/product';
+import { Product } from '../models/product';
 import { Constants, DemoActions, AppStateType } from './types';
 
 const prodOne = new Product("sadoiuad","zit",23,"sadad")

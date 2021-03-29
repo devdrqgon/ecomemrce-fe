@@ -1,6 +1,6 @@
 import { combineReducers, createStore } from 'redux';
-import { demoReducer } from './demo/reducer';
-import { AppStateType } from './demo/types';
+import { demoReducer } from './reducer';
+import { AppStateType } from './types';
 
 
 //type of our reducers
