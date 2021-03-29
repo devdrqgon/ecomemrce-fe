@@ -2,7 +2,8 @@ import React from "react"
 import { connect } from "react-redux"
 import { Product } from "../../models/product"
 import { AppState } from "../../store"
-import ProductItem from "../common/productItem/productItem"
+import ShoppingCartItem from "./components/shoppingCartItem"
+import EmptyShoppingCard from "./emptyShoppingCard"
 import styles from "./shoppingCard.module.css"
 
 interface ShoppingCardPageProps{
@@ -41,7 +42,7 @@ const ShoppingCardPage: React.FC<ShoppingCardPageProps>= ({shoppingCardProducts}
                  <div className={styles.shoppingCardItemsContainer}>
                      {
                          shoppingCardProducts.map(p => 
-                             <ProductItem product={p}  />   
+                             <ShoppingCartItem product={p} />   
                          )
                      }
                  </div>
@@ -57,9 +58,7 @@ const ShoppingCardPage: React.FC<ShoppingCardPageProps>= ({shoppingCardProducts}
              
          </div> 
          :
-         <div>
-             shopping card empty, echri haja hezebi
-         </div>   
+        <EmptyShoppingCard/>
         }
        </div>
     )

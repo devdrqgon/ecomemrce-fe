@@ -17,7 +17,7 @@ const ProductItem: React.FC<ProductItemProps> = ({product,addItem}) => {
 
 return(
     
-    <div onClick={()=> addItem(product)} className={styles.itemContainer}>
+    <div className={styles.itemContainer}>
         <div className={styles.imgStyle}>
 
         </div>
@@ -28,7 +28,7 @@ return(
             price: {product.price}
         </div>
         <div>
-           <Button type='primary'> Add to card</Button>
+           <Button  onClick={()=> addItem(product)}  type='primary'> Add to card</Button>
         </div>
     </div>
 )
