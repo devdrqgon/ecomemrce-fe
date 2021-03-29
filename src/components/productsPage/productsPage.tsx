@@ -2,25 +2,28 @@ import React from 'react'
 import styles from './productsPage.module.css'
 import { Product } from '../../models/product'
 import ProductItem from '../common/productItem/productItem'
+import { connect } from 'react-redux'
+import { AppState } from '../../store'
 
 interface ProductsPageProps {
-    productsListProp: Product[]
+    productsInventory: Product[]
 }
-const ProductsPage: React.FC= () => {
-    const prodOne = new Product("sadoiuad","bnlabl",23,"sadad")
-     const prodTwo = new Product("sadoiuasd2ad","ztz",54,"sadad")
-     const prodThree = new Product("sadoiuaasdd","bnladabl",230,"sadad")
-     const prodList = [prodOne,prodTwo, prodThree]
+const ProductsPage: React.FC<ProductsPageProps>= ({productsInventory}) => {
+   
     return(
-        <div className={styles.ProductsListContainer}>
-                
+        <div className={styles.ProductsListContainer}>    
             {
-                prodList.map(p=>
-                <ProductItem nameProduct={p.name} priceProduct={p.price}/>
-                    
+                productsInventory.map(p=>
+                    <ProductItem product={p}/>
                 )
             }
         </div>
     )
 }
-export default ProductsPage
+
+const mapStateToProps = ({ state }: AppState) => {
+    const { productsInventory } = state;
+    return { productsInventory };
+}
+
+export default connect(mapStateToProps)(ProductsPage);
