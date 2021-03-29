@@ -4,7 +4,8 @@ import * as actions from './actions';
 
 export type DemoActions = ActionType<typeof actions>;
 
-export interface IDemoState {
+//type of our appState
+export interface AppStateType {
     productsInventory: Product[]
     shoppingCardProducts: Product[]
 }

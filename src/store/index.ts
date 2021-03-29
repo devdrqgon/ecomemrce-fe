@@ -1,11 +1,14 @@
 import { combineReducers, createStore } from 'redux';
 import { demoReducer } from './demo/reducer';
-import { IDemoState } from './demo/types';
-export interface IRootState {
-    demo: IDemoState
+import { AppStateType } from './demo/types';
+
+
+//type of our reducers
+export interface AppState {
+    state: AppStateType
 }
-const store = createStore<IRootState, any, any, any>(
+const store = createStore<AppState, any, any, any>(
     combineReducers({
-        demo: demoReducer
+        state: demoReducer,
 }));
 export default store;

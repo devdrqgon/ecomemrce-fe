@@ -1,7 +1,7 @@
 import React from "react"
 import { connect } from "react-redux"
 import { Product } from "../../models/product"
-import { IRootState } from "../../store"
+import { AppState } from "../../store"
 import ProductItem from "../common/productItem/productItem"
 import styles from "./shoppingCard.module.css"
 
@@ -64,8 +64,8 @@ const ShoppingCardPage: React.FC<ShoppingCardPageProps>= ({shoppingCardProducts}
        </div>
     )
 }
-const mapStateToProps = ({ demo }: IRootState) => {
-    const { shoppingCardProducts } = demo;
+const mapStateToProps = ({ state }: AppState) => {
+    const { shoppingCardProducts } = state;
     return { shoppingCardProducts };
 }
 
