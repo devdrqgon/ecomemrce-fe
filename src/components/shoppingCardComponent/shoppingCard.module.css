@@ -1,6 +1,56 @@
-.shoppingCardContianer{
+.shoppingCardPageContainer{
+    background-color: rgb(204, 203, 203);
     display: flex;
-    justify-content: center;
-    border: 1px solid black;
+   border: black 1px solid;
+   min-height: 100vh;
    
 }
+
+.shoppingCardContainer{
+    border: 1px solid white;
+    border-radius: 15px;
+    margin: 10px;
+    width: 70%;
+    background-color: white;
+}
+
+.checkoutContainer{
+    margin: 10px 10px 500px 10px;
+    width: 30%;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.headerContainer{
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-content: stretch;
+   
+}
+
+.titleStyle{
+    font-size: larger;
+    font-weight: 600;
+}
+
+.priceStyle{
+    margin-top: 20px;
+}
+
+.shoppingCardItemsContainer{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
+}
+
+
+

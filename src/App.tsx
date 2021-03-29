@@ -1,18 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import ProductsOverview from './components/productsOverviewComp/productsOverview';
-import { Product } from "./models/product"
-import SinglePage from './components/singlePageHome/singlePageComp';
-
+import MasterLayout from './components/layout/masterLayout';
 
 const App: React.FC = () => {
 
-
-
 return (
     <div className="App">
-      <SinglePage/>             
+        <MasterLayout/> 
     </div>
 
 

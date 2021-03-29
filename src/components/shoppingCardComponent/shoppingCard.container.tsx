@@ -1,30 +1,62 @@
 import React from "react"
-import styles from "./shoppingCard.module.css"
 import { Product } from "../../models/product"
+import ProductItem from "../common/productItem/productItem"
+import styles from "./shoppingCard.module.css"
 
-
-interface ShoppingCardProps {
-    ProductsListProp: Product[]
+interface ShoppingCardPageProps{
+    prodListProp: Product[]
 }
 
-const ShoppingCard: React.FC<ShoppingCardProps> = ({ ProductsListProp }) => {
+
+const ShoppingCardPage: React.FC= () => {
+    //Daten Vearbeitung Teil
+    const prodOne = new Product("sadoiuad","bnlabl",23,"sadad")
+    const prodTwo = new Product("sadoiuasd2ad","ztz",54,"sadad")
+    const prodThree = new Product("sadoiuaasdd","bnladabl",230,"sadad")
+    const prodList = [prodOne,prodTwo, prodThree]
+    function calculateSum(_inputList: Product[]){
+        let sum = 0
+        prodList.forEach(p => {
+            sum = sum + p.price
+        });
+        return sum
+    }
+    let itemsCount = prodList.length
+    let totalprice = calculateSum(prodList)
+
+    //output
     return (
-        <div>
-            <div style={{ marginLeft: '100px', borderBottom: 'solid 1px black' }}>
-                <h4> Shopping Card</h4>
-            </div>
-            {ProductsListProp.map(p =>
-                <div className={styles.shoppingCardContianer}>
-                    <div style={{ marginRight: '50px' }}>
-                        Name: {p.name}
+        <div className={styles.shoppingCardPageContainer}>
+            <div className={styles.shoppingCardContainer}>
+                <div className={styles.headerContainer}>
+                    <div className={styles.titleStyle}>
+                        shopping Card
                     </div>
-                    <div>
-                        Price:  {p.price}
+                    <div className={styles.priceStyle}>
+                        price
                     </div>
                 </div>
-            )}
+                <div className={styles.shoppingCardItemsContainer}>
+                    {
+                        prodList.map(p => 
+                            <ProductItem nameProduct={p.name} priceProduct={p.price}  />   
+                        )
+                    }
+                </div>
+            </div>
+            <div className={styles.checkoutContainer}>
+                <div>
+                    Subtotal ({itemsCount}): {totalprice} euros
+                </div>
+                <div>
+                    <button> Checkout </button>
+                </div>
+            </div>
+            
         </div>
     )
 }
 
-export default ShoppingCard
+export default ShoppingCardPage
+
+

@@ -1,8 +1,0 @@
-  
-.ProductItemContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 50px;
-    border: solid  rgb(72, 6, 226) 1px;
-}
