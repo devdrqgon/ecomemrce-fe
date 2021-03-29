@@ -1,5 +1,5 @@
 import { action } from 'typesafe-actions';
-import { Product } from '../../models/product';
+import { Product } from '../models/product';
 import { Constants } from './types';
 
 
