@@ -1,7 +1,6 @@
 import { Layout, Menu } from 'antd';
 import styles from "./masterLayout.module.css"
 import React from 'react'
-import { Product } from '../../models/product';
 import ProductsPage from '../productsPage/productsPage';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import ShoppingCardPage from '../shoppingCardComponent/shoppingCard.container';

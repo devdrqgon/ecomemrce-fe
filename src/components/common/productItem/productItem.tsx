@@ -1,19 +1,10 @@
 import React from "react"
-import { Dispatch } from "redux"
-import { DemoActions } from "../../../store/types"
 import styles from "./productItem.module.css"
-import * as actions from '../../../store/actions';
-import { Product } from "../../../models/product";
-import { connect } from "react-redux";
 import { Button } from "antd";
 
-interface ProductItemProps{
-    product: Product,
-    addItem: (item : Product) => void
-}
 
 
-const ProductItem: React.FC<ProductItemProps> = ({product,addItem}) => {
+const ProductItem: React.FC = () => {
 
 return(
     
@@ -22,22 +13,18 @@ return(
 
         </div>
         <div className={styles.detailsStyle}>
-            name : {product.name}
+            name :
         </div>
         <div className={styles.itemPriceStyle}>
-            price: {product.price}
+            price: 
         </div>
         <div>
-           <Button  onClick={()=> addItem(product)}  type='primary'> Add to card</Button>
+           <Button  type='primary'> Add to card</Button>
         </div>
     </div>
 )
 }
 
-const mapDispatcherToProps = (dispatch: Dispatch<DemoActions>) => {
-    return {
-        addItem: (item: Product) => dispatch(actions.addItemToList(item))
-    }
-}
 
-export default connect(null, mapDispatcherToProps)(ProductItem);
+
+export default ProductItem

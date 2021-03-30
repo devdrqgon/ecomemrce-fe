@@ -1,34 +1,37 @@
-import { Product } from '../models/product';
-import { Constants, DemoActions, AppStateType } from './types';
+import * as actionTypes from "./actionTypes"
 
-const prodOne = new Product("sadoiuad","zit",23,"sadad")
-const prodTwo = new Product("sadoiuasd2ad","7lib",54,"sadad")
-const prodThree = new Product("sadoiuaasdd","chocotom",230,"sadad")
-const prodList = [prodOne,prodTwo, prodThree]
-
-const initialState: AppStateType = {
-    productsInventory: prodList,
-    shoppingCardProducts: [],
-    
-};
-
-
-export function demoReducer(state: AppStateType = initialState, action: DemoActions): 
-AppStateType {
-    switch (action.type) {
-
-        case Constants.ADD_ITEM:{
-            let temp = state.shoppingCardProducts
-            temp.push(action.payload.item)
-            let s = {
-                ...state,
-                shoppingCardProducts: temp
-            }
-
-            return s
-        }
-           
-        default:
-            return state;
-    }
+const initialState: AppState = {
+  products: [
+    {
+      id: "ss3",
+      title: "prod 1",
+      price: 23
+  },
+  {
+    id: "ss4",
+    title: "prod 2",
+    price: 234
+  },
+  ],
 }
+
+const reducer = (
+    state: AppState = initialState,
+    action: ProductAction
+  ): AppState => {
+    switch (action.type) {
+      
+        
+      case actionTypes.REMOVE_ARTICLE:
+        const updatedProducts: IProduct[] = state.products.filter(
+          article => article.id !== action.product.id
+        )
+        return {
+          ...state,
+          products: updatedProducts,
+        }
+    }
+    return state
+  }
+  
+  export default reducer

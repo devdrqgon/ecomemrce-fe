@@ -1,0 +1,2 @@
+export const ADD_ARTICLE = "ADD_PRODUCT"
+export const REMOVE_ARTICLE = "REMOVE_PRODUCT"

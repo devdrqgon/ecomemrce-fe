@@ -1,34 +1,35 @@
 import React from "react"
-import { connect } from "react-redux"
-import { Product } from "../../models/product"
-import { AppState } from "../../store"
+import { shallowEqual, useSelector } from "react-redux"
 import ShoppingCartItem from "./components/shoppingCartItem"
 import EmptyShoppingCard from "./emptyShoppingCard"
 import styles from "./shoppingCard.module.css"
-
-interface ShoppingCardPageProps{
-    shoppingCardProducts: Product[]
-}
+import { addProduct, removeProduct} from "../../store/actionCreators"
 
 
-const ShoppingCardPage: React.FC<ShoppingCardPageProps>= ({shoppingCardProducts}) => {
+
+
+const ShoppingCardPage: React.FC= () => {
     //Daten 
+    const products: readonly IProduct[] = useSelector(
+        (state: AppState) => state.products,
+        shallowEqual
+      )
    
     
-    function calculateSum(_inputList: Product[]){
+    function calculateSum(_inputList: readonly IProduct[]){
         let sum = 0
-        shoppingCardProducts.forEach(p => {
+        products.forEach(p => {
             sum = sum + p.price
         });
         return sum
     }
-    let itemsCount = shoppingCardProducts.length
-    let totalprice = calculateSum(shoppingCardProducts)
+    let itemsCount = products.length
+    let totalprice = calculateSum(products)
 
     //output
     return (
        <div>
-           {shoppingCardProducts.length> 0 ? 
+           {products.length> 0 ? 
              <div className={styles.shoppingCardPageContainer}>
              <div className={styles.shoppingCardContainer}>
                  <div className={styles.headerContainer}>
@@ -41,8 +42,8 @@ const ShoppingCardPage: React.FC<ShoppingCardPageProps>= ({shoppingCardProducts}
                  </div>
                  <div className={styles.shoppingCardItemsContainer}>
                      {
-                         shoppingCardProducts.map(p => 
-                             <ShoppingCartItem product={p} />   
+                         products.map(p => 
+                             <ShoppingCartItem product={p} removeProduct={removeProduct} />   
                          )
                      }
                  </div>
@@ -63,12 +64,8 @@ const ShoppingCardPage: React.FC<ShoppingCardPageProps>= ({shoppingCardProducts}
        </div>
     )
 }
-const mapStateToProps = ({ state }: AppState) => {
-    const { shoppingCardProducts } = state;
-    return { shoppingCardProducts };
-}
 
-export default connect(mapStateToProps)(ShoppingCardPage);
+export default ShoppingCardPage;
 
 
 
