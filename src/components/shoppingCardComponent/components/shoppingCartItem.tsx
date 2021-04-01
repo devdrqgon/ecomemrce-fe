@@ -6,21 +6,17 @@ import { useDispatch } from "react-redux"
 
 interface ProductItemProps{
     product: IProduct,
-    removeProduct: (article: IProduct) => void
+    removeProductProp: (article: IProduct) => void
 }
 
 
-const ShoppingCartItem: React.FC<ProductItemProps> = ({product, removeProduct}) => {
+const ShoppingCartItem: React.FC<ProductItemProps> = ({product, removeProductProp}) => {
     const dispatch: Dispatch<any> = useDispatch()
-    const deleteProduct = React.useCallback(
-        (article: IProduct) => dispatch(removeProduct(article)),
-        [dispatch, removeProduct]
-      )
+    //deleteProduct is a function object that has inside a func that dispatches our action creator
+    const deleteProduct = (article: IProduct) => dispatch(removeProductProp(article))
 return(
-    
     <div className={styles.itemContainer}>
         <div className={styles.imgStyle}>
-
         </div>
         <div className={styles.detailsStyle}>
             name : {product.title}
@@ -29,9 +25,8 @@ return(
             price: {product.price}
         </div>
         <div>
-        <button onClick={() => deleteProduct(product)}>Delete</button>
+            <button onClick={() => deleteProduct(product)}>Delete</button>
         </div>
-        
     </div>
 )
 }

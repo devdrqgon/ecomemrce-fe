@@ -4,6 +4,7 @@ interface IProduct {
     price: number
   }
 
+  //definition of which properties, does your state contains
   type AppState = {
     products: IProduct[]
   }

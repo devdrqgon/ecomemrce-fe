@@ -9,13 +9,14 @@ import { addProduct, removeProduct} from "../../store/actionCreators"
 
 
 const ShoppingCardPage: React.FC= () => {
-    //Daten 
+    //this is how you read certain data from your store 
     const products: readonly IProduct[] = useSelector(
         (state: AppState) => state.products,
-        shallowEqual
       )
+
+     
    
-    
+    //updating checkout info
     function calculateSum(_inputList: readonly IProduct[]){
         let sum = 0
         products.forEach(p => {
@@ -43,7 +44,7 @@ const ShoppingCardPage: React.FC= () => {
                  <div className={styles.shoppingCardItemsContainer}>
                      {
                          products.map(p => 
-                             <ShoppingCartItem product={p} removeProduct={removeProduct} />   
+                             <ShoppingCartItem product={p} removeProductProp={removeProduct} />   
                          )
                      }
                  </div>
