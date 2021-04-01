@@ -6,7 +6,8 @@ interface IProduct {
 
   //definition of which properties, does your state contains
   type AppState = {
-    products: IProduct[]
+    shoppingCartItems: IProduct[]
+    inventoryProducts: IProduct[]
   }
 
   type ProductAction = {

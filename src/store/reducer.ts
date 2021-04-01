@@ -1,7 +1,9 @@
 import * as actionTypes from "./actionTypes"
 
+//the intial state of our store that our app starts with
 const initialState: AppState = {
-  products: [
+  shoppingCartItems: [],
+  inventoryProducts: [
     {
       id: "ss3",
       title: "prod 1",
@@ -12,7 +14,7 @@ const initialState: AppState = {
     title: "prod 2",
     price: 234
   },
-  ],
+  ]
 }
 
 const reducer = (
@@ -22,13 +24,13 @@ const reducer = (
     switch (action.type) {
       
         
-      case actionTypes.REMOVE_ARTICLE:
-        const updatedProducts: IProduct[] = state.products.filter(
+      case actionTypes.REMOVE_SHOPPING_CART_ITEM:
+        const updatedProducts: IProduct[] = state.shoppingCartItems.filter(
           article => article.id !== action.product.id
         )
         return {
           ...state,
-          products: updatedProducts,
+          shoppingCartItems: updatedProducts,
         }
     }
     return state

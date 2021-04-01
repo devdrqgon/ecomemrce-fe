@@ -3,7 +3,7 @@ import { shallowEqual, useSelector } from "react-redux"
 import ShoppingCartItem from "./components/shoppingCartItem"
 import EmptyShoppingCard from "./emptyShoppingCard"
 import styles from "./shoppingCard.module.css"
-import { addProduct, removeProduct} from "../../store/actionCreators"
+import {  removeProduct} from "../../store/actionCreators"
 
 
 
@@ -11,7 +11,7 @@ import { addProduct, removeProduct} from "../../store/actionCreators"
 const ShoppingCardPage: React.FC= () => {
     //this is how you read certain data from your store 
     const products: readonly IProduct[] = useSelector(
-        (state: AppState) => state.products,
+        (state: AppState) => state.shoppingCartItems,
       )
 
      
