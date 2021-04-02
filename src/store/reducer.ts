@@ -23,6 +23,11 @@ const reducer = (
   ): AppState => {
     switch (action.type) {
       
+      case actionTypes.ADD_PRODUCT_TO_SHOPPING_CART:
+        return {
+          ...state,
+          shoppingCartItems: state.shoppingCartItems.concat(action.product),
+        }
         
       case actionTypes.REMOVE_SHOPPING_CART_ITEM:
         const updatedProducts: IProduct[] = state.shoppingCartItems.filter(

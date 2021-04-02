@@ -4,6 +4,7 @@ import ShoppingCartItem from "./components/shoppingCartItem"
 import EmptyShoppingCard from "./emptyShoppingCard"
 import styles from "./shoppingCard.module.css"
 import {  removeProduct} from "../../store/actionCreators"
+import { uuid } from "uuidv4"
 
 
 
@@ -11,7 +12,7 @@ import {  removeProduct} from "../../store/actionCreators"
 const ShoppingCardPage: React.FC= () => {
     //this is how you read certain data from your store 
     const products: readonly IProduct[] = useSelector(
-        (state: AppState) => state.shoppingCartItems,
+        (state: AppState) => state.shoppingCartItems
       )
 
      
@@ -44,7 +45,7 @@ const ShoppingCardPage: React.FC= () => {
                  <div className={styles.shoppingCardItemsContainer}>
                      {
                          products.map(p => 
-                             <ShoppingCartItem product={p} removeProductProp={removeProduct} />   
+                             <ShoppingCartItem key={uuid()} product={p} removeProductProp={removeProduct} />   
                          )
                      }
                  </div>

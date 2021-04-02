@@ -3,7 +3,6 @@ import styles from "./shoppingCart.module.css"
 import { Dispatch } from "redux"
 import { useDispatch } from "react-redux"
 
-
 interface ProductItemProps{
     product: IProduct,
     removeProductProp: (article: IProduct) => void
