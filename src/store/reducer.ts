@@ -1,3 +1,4 @@
+import { stat } from "node:fs"
 import * as actionTypes from "./actionTypes"
 
 //the intial state of our store that our app starts with
@@ -28,7 +29,7 @@ const reducer = (
           id: action.product.id, 
           title: action.product.title,
           price: action.product.price,
-          quanity: 1
+          quanity: 3
         }
       
         return {
@@ -37,13 +38,35 @@ const reducer = (
         }
         
       case actionTypes.REMOVE_SHOPPING_CART_ITEM:
-        const updatedShoppingCart: IShoppingCartItem[] = state.shoppingCartItems.filter(
-          arrayItem => arrayItem.id !== action.scItem.id
-        )
-        return {
-          ...state,
-          shoppingCartItems: updatedShoppingCart,
+
+        if(action.scItem.quanity === 1){
+          const updatedShoppingCart: IShoppingCartItem[] = state.shoppingCartItems.filter(
+            arrayItem => arrayItem.id !== action.scItem.id
+          )
+          return {
+            ...state,
+            shoppingCartItems: updatedShoppingCart,
+          }
+          
         }
+        else if(action.scItem.quanity > 1)
+        { 
+          const updatedSCItems = state.shoppingCartItems.map(
+            (item) => 
+              item.id === action.scItem.id ? 
+                              {...item, quanity: item.quanity -1}
+                            :
+                             item
+        )
+          return { 
+            ...state, 
+            shoppingCartItems: updatedSCItems
+        }
+      }
+        else{
+          throw Error("quantity was less than 1")
+        }
+        
     }
     return state
   }

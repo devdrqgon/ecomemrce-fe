@@ -26,10 +26,10 @@ return(
                quanity
                </div>
                <div>
-                <input width={'5px'} type="text"/>
+                {scItem.quanity}
                </div>
                <div>
-                   <button> - </button>
+                   <button onClick={() => deleteProduct(scItem)} > - </button>
                </div>
                <div>
                    <button> +</button>

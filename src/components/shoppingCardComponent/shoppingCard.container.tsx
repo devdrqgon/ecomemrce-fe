@@ -12,7 +12,8 @@ import { uuid } from "uuidv4"
 const ShoppingCardPage: React.FC= () => {
     //this is how you read certain data from your store 
     const shoppingCartItems: readonly IShoppingCartItem[] = useSelector(
-        (state: AppState) => state.shoppingCartItems
+        (state: AppState) => state.shoppingCartItems,
+        shallowEqual
       )
 
      
