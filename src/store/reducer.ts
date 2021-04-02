@@ -19,26 +19,36 @@ const initialState: AppState = {
 
 const reducer = (
     state: AppState = initialState,
-    action: ProductAction
+    action: any
   ): AppState => {
     switch (action.type) {
       
       case actionTypes.ADD_PRODUCT_TO_SHOPPING_CART:
+        const newScItem: IShoppingCartItem = {
+          id: action.product.id, 
+          title: action.product.title,
+          price: action.product.price,
+          quanity: 1
+        }
+      
         return {
           ...state,
-          shoppingCartItems: state.shoppingCartItems.concat(action.product),
+          shoppingCartItems: state.shoppingCartItems.concat(newScItem),
         }
         
       case actionTypes.REMOVE_SHOPPING_CART_ITEM:
-        const updatedProducts: IProduct[] = state.shoppingCartItems.filter(
-          article => article.id !== action.product.id
+        const updatedShoppingCart: IShoppingCartItem[] = state.shoppingCartItems.filter(
+          arrayItem => arrayItem.id !== action.scItem.id
         )
         return {
           ...state,
-          shoppingCartItems: updatedProducts,
+          shoppingCartItems: updatedShoppingCart,
         }
     }
     return state
   }
   
   export default reducer
+
+
+                                                             

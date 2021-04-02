@@ -6,7 +6,7 @@ import thunk from "redux-thunk"
 import App from "./App"
 import reducer from "./store/reducer"
 
-const store: Store<AppState, ProductAction> & {
+const store: Store<AppState, any> & {
   dispatch: DispatchType
 } = createStore(reducer, applyMiddleware(thunk))
 

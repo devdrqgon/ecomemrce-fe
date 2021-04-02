@@ -3,7 +3,7 @@ import { shallowEqual, useSelector } from "react-redux"
 import ShoppingCartItem from "./components/shoppingCartItem"
 import EmptyShoppingCard from "./emptyShoppingCard"
 import styles from "./shoppingCard.module.css"
-import {  removeProduct} from "../../store/actionCreators"
+import {  removeSCItem} from "../../store/actionCreators"
 import { uuid } from "uuidv4"
 
 
@@ -11,7 +11,7 @@ import { uuid } from "uuidv4"
 
 const ShoppingCardPage: React.FC= () => {
     //this is how you read certain data from your store 
-    const products: readonly IProduct[] = useSelector(
+    const shoppingCartItems: readonly IShoppingCartItem[] = useSelector(
         (state: AppState) => state.shoppingCartItems
       )
 
@@ -20,18 +20,18 @@ const ShoppingCardPage: React.FC= () => {
     //updating checkout info
     function calculateSum(_inputList: readonly IProduct[]){
         let sum = 0
-        products.forEach(p => {
+        shoppingCartItems.forEach(p => {
             sum = sum + p.price
         });
         return sum
     }
-    let itemsCount = products.length
-    let totalprice = calculateSum(products)
+    let itemsCount = shoppingCartItems.length
+    let totalprice = calculateSum(shoppingCartItems)
 
     //output
     return (
        <div>
-           {products.length> 0 ? 
+           {shoppingCartItems.length> 0 ? 
              <div className={styles.shoppingCardPageContainer}>
              <div className={styles.shoppingCardContainer}>
                  <div className={styles.headerContainer}>
@@ -44,8 +44,8 @@ const ShoppingCardPage: React.FC= () => {
                  </div>
                  <div className={styles.shoppingCardItemsContainer}>
                      {
-                         products.map(p => 
-                             <ShoppingCartItem key={uuid()} product={p} removeProductProp={removeProduct} />   
+                         shoppingCartItems.map(p => 
+                             <ShoppingCartItem key={uuid()} scItem={p} removeProductProp={removeSCItem} />   
                          )
                      }
                  </div>
