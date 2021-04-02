@@ -25,16 +25,33 @@ const reducer = (
     switch (action.type) {
       
       case actionTypes.ADD_PRODUCT_TO_SHOPPING_CART:
-        const newScItem: IShoppingCartItem = {
-          id: action.product.id, 
-          title: action.product.title,
-          price: action.product.price,
-          quanity: 3
+        let index = state.shoppingCartItems.findIndex(s=> s.id == action.product.id)
+        if(index === -1){
+          const newScItem: IShoppingCartItem = {
+            id: action.product.id, 
+            title: action.product.title,
+            price: action.product.price,
+            quanity: 1
+          }
+        
+          return {
+            ...state,
+            shoppingCartItems: state.shoppingCartItems.concat(newScItem),
+          }
+        
         }
-      
-        return {
-          ...state,
-          shoppingCartItems: state.shoppingCartItems.concat(newScItem),
+        else{
+          const updatedSCItems = state.shoppingCartItems.map(
+            (item) => 
+              item.id === action.product.id ? 
+                              {...item, quanity: item.quanity +1}
+                            :
+                             item
+          )
+          return { 
+            ...state, 
+            shoppingCartItems: updatedSCItems
+          }
         }
         
       case actionTypes.REMOVE_SHOPPING_CART_ITEM:

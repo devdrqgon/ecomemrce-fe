@@ -22,7 +22,7 @@ const ShoppingCardPage: React.FC= () => {
     function calculateSum(_inputList: readonly IProduct[]){
         let sum = 0
         shoppingCartItems.forEach(p => {
-            sum = sum + p.price
+            sum = sum + (p.price * p.quanity)
         });
         return sum
     }
