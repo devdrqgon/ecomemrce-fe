@@ -40,7 +40,7 @@ const ShoppingCartItem: React.FC<ProductItemProps> = ({scItem, removeProductProp
             </div>
         </div>
         <div className={styles.itemPriceStyle}>
-            price: {scItem.price}
+            price: {scItem.price * scItem.quanity}
         </div>
     </div>
 )
