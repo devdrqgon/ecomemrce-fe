@@ -19,14 +19,22 @@ const ShoppingCardPage: React.FC= () => {
      
    
     //updating checkout info
-    function calculateSum(_inputList: readonly IProduct[]){
+    function calculateSum(_inputList: readonly IShoppingCartItem[]){
         let sum = 0
         shoppingCartItems.forEach(p => {
             sum = sum + (p.price * p.quanity)
         });
         return sum
     }
-    let itemsCount = shoppingCartItems.length
+
+    function calculateItemsCount(_inputList: readonly IShoppingCartItem[]){
+        let sum = 0
+        shoppingCartItems.forEach(p => {
+            sum = sum + ( p.quanity)
+        });
+        return sum
+    }
+    let itemsCount = calculateItemsCount(shoppingCartItems)
     let totalprice = calculateSum(shoppingCartItems)
 
     //output
