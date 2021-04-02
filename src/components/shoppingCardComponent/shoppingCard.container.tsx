@@ -58,7 +58,7 @@ const ShoppingCardPage: React.FC= () => {
                               key={uuid()} 
                               scItem={p}
                              increaseQuantityProp={addProductToSC}
-                             removeProductProp={removeSCItem} />   
+                             decreaseQuantityProp={removeSCItem} />   
                          )
                      }
                  </div>
