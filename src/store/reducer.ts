@@ -54,7 +54,7 @@ const reducer = (
           }
         }
         
-      case actionTypes.REMOVE_SHOPPING_CART_ITEM:
+      case actionTypes.DECREASE_SHOPPING_CART_ITEM_QUANITY:
 
         if(action.scItem.quanity === 1){
           const updatedShoppingCart: IShoppingCartItem[] = state.shoppingCartItems.filter(
@@ -84,6 +84,15 @@ const reducer = (
           throw Error("quantity was less than 1")
         }
         
+
+        case actionTypes.REMOVE_SC_ITEM:
+          const updatedShoppingCart: IShoppingCartItem[] = state.shoppingCartItems.filter(
+            arrayItem => arrayItem.id !== action.scItem.id
+          )
+          return {
+            ...state,
+            shoppingCartItems: updatedShoppingCart,
+          }
     }
     return state
   }

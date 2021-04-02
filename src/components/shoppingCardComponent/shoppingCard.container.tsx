@@ -3,7 +3,7 @@ import { shallowEqual, useSelector } from "react-redux"
 import ShoppingCartItem from "./components/shoppingCartItem"
 import EmptyShoppingCard from "./emptyShoppingCard"
 import styles from "./shoppingCard.module.css"
-import {  removeSCItem, addProductToSC} from "../../store/actionCreators"
+import {  decreaseSCItemQuantity, addProductToSC, removeSCItem} from "../../store/actionCreators"
 import { uuid } from "uuidv4"
 
 
@@ -57,8 +57,9 @@ const ShoppingCardPage: React.FC= () => {
                              <ShoppingCartItem 
                               key={uuid()} 
                               scItem={p}
+                              removeSCItemProp={removeSCItem}
                              increaseQuantityProp={addProductToSC}
-                             decreaseQuantityProp={removeSCItem} />   
+                             decreaseQuantityProp={decreaseSCItemQuantity} />   
                          )
                      }
                  </div>

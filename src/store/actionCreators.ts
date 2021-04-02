@@ -13,9 +13,9 @@ export function addProductToSC(product: IProduct) {
   }
 }
 
-export function removeSCItem(scItem: IShoppingCartItem) {
+export function decreaseSCItemQuantity(scItem: IShoppingCartItem) {
   const action: SCAction = {
-    type: actionTypes.REMOVE_SHOPPING_CART_ITEM,
+    type: actionTypes.DECREASE_SHOPPING_CART_ITEM_QUANITY,
     scItem
   }
   return  (dispatch: DispatchType) => {
@@ -24,3 +24,18 @@ export function removeSCItem(scItem: IShoppingCartItem) {
     }, 500)
   }
 }
+
+
+
+export function removeSCItem(scItem: IShoppingCartItem) {
+  const action: SCAction = {
+    type: actionTypes.REMOVE_SC_ITEM,
+    scItem
+  }
+  return  (dispatch: DispatchType) => {
+    setTimeout(() => {
+      dispatch(action)
+    }, 500)
+  }
+}
+
