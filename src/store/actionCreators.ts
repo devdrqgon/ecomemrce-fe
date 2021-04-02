@@ -1,6 +1,6 @@
 import * as actionTypes from "./actionTypes"
 
-export function addProductToSC(product: IProduct) {
+export function addProductToScACTIONCREATOR(product: IProduct) {
   const action: ProductAction = {
     type: actionTypes.ADD_PRODUCT_TO_SHOPPING_CART,
     product,
@@ -13,7 +13,7 @@ export function addProductToSC(product: IProduct) {
   }
 }
 
-export function decreaseSCItemQuantity(scItem: IShoppingCartItem) {
+export function decreaseSCItemQuantityACTIONCREATOR(scItem: IShoppingCartItem) {
   const action: SCAction = {
     type: actionTypes.DECREASE_SHOPPING_CART_ITEM_QUANITY,
     scItem
@@ -27,7 +27,7 @@ export function decreaseSCItemQuantity(scItem: IShoppingCartItem) {
 
 
 
-export function removeSCItem(scItem: IShoppingCartItem) {
+export function removeSCItemACTIONCREATOR(scItem: IShoppingCartItem) {
   const action: SCAction = {
     type: actionTypes.REMOVE_SC_ITEM,
     scItem

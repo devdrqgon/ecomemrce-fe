@@ -3,7 +3,6 @@ import styles from "./productItem.module.css"
 import { Button } from "antd";
 import { useDispatch } from "react-redux";
 import { Dispatch } from "redux";
-import { addProductToSC } from "../../../store/actionCreators";
 
 interface ProductItemProps{
     productProp : IProduct
