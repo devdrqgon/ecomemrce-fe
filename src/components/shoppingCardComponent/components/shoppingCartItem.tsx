@@ -5,15 +5,18 @@ import { useDispatch } from "react-redux"
 
 interface ProductItemProps{
     scItem: IShoppingCartItem,
-    removeProductProp: (article: IShoppingCartItem) => void
+    removeProductProp: (article: IShoppingCartItem) => void,
+    increaseQuantityProp: (article: IShoppingCartItem) => void
 }
 
 
-const ShoppingCartItem: React.FC<ProductItemProps> = ({scItem, removeProductProp}) => {
+const ShoppingCartItem: React.FC<ProductItemProps> = ({scItem, removeProductProp,increaseQuantityProp}) => {
     const dispatch: Dispatch<any> = useDispatch()
     //deleteProduct is a function object that has inside a func that dispatches our action creator
     const deleteProduct = (article: IShoppingCartItem) => dispatch(removeProductProp(article))
-return(
+    const increaseQuantity = (article: IShoppingCartItem) => dispatch(increaseQuantityProp(article))
+
+    return(
     <div className={styles.itemContainer}>
         <div className={styles.imgStyle}>
         </div>
@@ -32,7 +35,7 @@ return(
                    <button onClick={() => deleteProduct(scItem)} > - </button>
                </div>
                <div>
-                   <button> +</button>
+                   <button onClick={() => increaseQuantity(scItem)}> +</button>
                </div>
             </div>
         </div>
